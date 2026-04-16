@@ -23,9 +23,14 @@
 **Testing**: Not required for this project.
 **Target Platform**: Web (Modern Browsers)
 **Project Type**: Web Application
-**Performance Goals**: [NEEDS CLARIFICATION]
-**Constraints**: [NEEDS CLARIFICATION]
-**Scale/Scope**: [NEEDS CLARIFICATION]
+**Performance Goals**: API Response Time: p99 latency < 1000ms
+**Constraints**: 
+- Browser Support: Must support the latest two versions of major browsers (Chrome, Firefox, Safari, Edge)
+- Accessibility: Must be compliant with WCAG 2.1 Level AA standards
+**Scale/Scope**: 
+- User Load: Anticipated 10,000 daily active users within the first year
+- Data Volume: Handle 100 API requests per second during peak hours
+- Feature Scope: The initial launch will include the auth, users, and crypto features only
 
 ## Constitution Check
 
