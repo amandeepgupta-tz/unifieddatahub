@@ -1,12 +1,11 @@
 <!--
 Sync Impact Report:
-- Version change: 0.0.0 -> 1.0.0
-- Modified principles: N/A (initial creation)
-- Added sections: Core Technologies, Project Structure, API Layer Abstraction, State Management Rules, Component & Hook Design, Specific Feature Implementations, Code Style and Quality
+- Version change: 1.0.0 -> 1.1.0
+- Modified principles: Added Principle VIII. Testing
+- Added sections: N/A
 - Removed sections: N/A
 - Templates requiring updates:
   - ✅ .specify/templates/plan-template.md
-  - ✅ .specify/templates/spec-template.md
   - ✅ .specify/templates/tasks-template.md
 - Follow-up TODOs: None
 -->
@@ -53,9 +52,12 @@ Sync Impact Report:
 - All files should be formatted according to Prettier defaults.
 - PropTypes or TypeScript should be used for component prop validation.
 
+### VIII. Testing
+- **No Test Cases**: As this is an assignment, the focus is on implementation. Therefore, no test cases (unit, integration, or end-to-end) are required.
+
 ## Governance
 
 This Constitution is the single source of truth for architectural and coding standards for the UnifyDataHub project. All code contributions, reviews, and automated checks must enforce these principles. Amendments to this constitution require a formal proposal and team-wide agreement.
 
-**Version**: 1.0.0 | **Ratified**: 2026-04-16 | **Last Amended**: 2026-04-16
+**Version**: 1.1.0 | **Ratified**: 2026-04-16 | **Last Amended**: 2026-04-16
 

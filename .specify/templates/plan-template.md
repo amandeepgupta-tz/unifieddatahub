@@ -20,7 +20,7 @@
 **Language/Version**: JavaScript (ES2022+)
 **Primary Dependencies**: React, TanStack Query, Zustand, Axios
 **Styling**: CSS Modules
-**Testing**: [NEEDS CLARIFICATION: e.g., Jest, React Testing Library]
+**Testing**: Not required for this project.
 **Target Platform**: Web (Modern Browsers)
 **Project Type**: Web Application
 **Performance Goals**: [NEEDS CLARIFICATION]
