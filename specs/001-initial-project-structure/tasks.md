@@ -25,36 +25,44 @@
 
 ## Phase 1: Setup (Shared Infrastructure)
 
-**Purpose**: Project initialization and basic structure.
+**Purpose**: Project initialization, configuration, and basic structure.
 
-- [ ] T001 Create the base `src` directory.
-- [ ] T002 [P] Create global directories: `src/components`, `src/hooks`, `src/lib`, `src/store`.
-- [ ] T003 [P] Create the main features directory `src/features`.
+- [X] T001 Create `package.json` with all required dependencies (React, React DOM, React Router, Axios, Zustand, TanStack Query, Vite) and development scripts.
+- [X] T002 [P] Create `vite.config.js` with React plugin configuration.
+- [X] T003 [P] Create the base `src` directory.
+- [X] T004 [P] Create global directories: `src/components`, `src/hooks`, `src/lib`, `src/store`.
+- [X] T005 [P] Create the main features directory `src/features`.
 
 ---
 
 ## Phase 2: User Story 1 - Developer Project Setup (Priority: P1) 🎯 MVP
 
-**Goal**: Generate the complete project folder and file structure according to the constitution.
+**Goal**: Generate the complete project folder and file structure according to the constitution, including all bootstrap files needed to run the application.
 
-**Independent Test**: The project structure can be verified by checking that all specified directories and placeholder files are created correctly.
+**Independent Test**: The project structure can be verified by checking that all specified directories and placeholder files are created correctly, and the application successfully starts with `npm install && npm run dev`.
+
+### Bootstrap & Entry Points
+
+- [X] T006 [P] [US1] Create `index.html` in project root with a div element (id="root") and script tag pointing to `src/main.jsx`.
+- [X] T007 [P] [US1] Create `src/main.jsx` that bootstraps the React application using ReactDOM.createRoot.
+- [X] T008 [P] [US1] Create `src/App.jsx` as the root React component that renders the Router component.
 
 ### Implementation for User Story 1
 
-- [ ] T004 [P] [US1] Create feature module directory `src/features/auth` with `api`, `components`, and `hooks` subdirectories.
-- [ ] T005 [P] [US1] Create feature module directory `src/features/users` with `api`, `components`, and `hooks` subdirectories.
-- [ ] T006 [P] [US1] Create feature module directory `src/features/crypto` with `api`, `components`, and `hooks` subdirectories.
-- [ ] T007 [P] [US1] Create feature module directory `src/features/weather` with `api`, `components`, and `hooks` subdirectories.
-- [ ] T008 [P] [US1] Create placeholder `index.js` in `src/features/auth`.
-- [ ] T009 [P] [US1] Create placeholder `index.js` in `src/features/users`.
-- [ ] T010 [P] [US1] Create placeholder `index.js` in `src/features/crypto`.
-- [ ] T011 [P] [US1] Create placeholder `index.js` in `src/features/weather`.
-- [ ] T012 [P] [US1] Create `src/lib/axios.js` with a centralized Axios instance and empty interceptors.
-- [ ] T013 [P] [US1] Create `src/store/auth.js` with a basic Zustand store for authentication.
-- [ ] T014 [P] [US1] Create `src/components/ProtectedRoute.jsx` with basic route protection logic.
-- [ ] T015 [P] [US1] Create `src/components/Router.jsx` with basic routing logic.
+- [X] T009 [P] [US1] Create feature module directory `src/features/auth` with `api`, `components`, and `hooks` subdirectories.
+- [X] T010 [P] [US1] Create feature module directory `src/features/users` with `api`, `components`, and `hooks` subdirectories.
+- [X] T011 [P] [US1] Create feature module directory `src/features/crypto` with `api`, `components`, and `hooks` subdirectories.
+- [X] T012 [P] [US1] Create feature module directory `src/features/weather` with `api`, `components`, and `hooks` subdirectories.
+- [X] T013 [P] [US1] Create placeholder `index.js` in `src/features/auth`.
+- [X] T014 [P] [US1] Create placeholder `index.js` in `src/features/users`.
+- [X] T015 [P] [US1] Create placeholder `index.js` in `src/features/crypto`.
+- [X] T016 [P] [US1] Create placeholder `index.js` in `src/features/weather`.
+- [X] T017 [P] [US1] Create `src/lib/axios.js` with a centralized Axios instance and request/response interceptors.
+- [X] T018 [P] [US1] Create `src/store/auth.js` with a basic Zustand store for authentication with persistence.
+- [X] T019 [P] [US1] Create `src/components/ProtectedRoute.jsx` with basic route protection logic.
+- [X] T020 [P] [US1] Create `src/components/Router.jsx` with basic routing logic including public and protected routes.
 
-**Checkpoint**: At this point, the entire project structure should be in place, ready for developers to start implementing features.
+**Checkpoint**: At this point, the entire project structure should be in place, and running `npm install && npm run dev` should successfully start the application without errors.
 
 ---
 
@@ -64,8 +72,13 @@
 
 ## Parallel Execution
 
-- All tasks within User Story 1 (T004-T015) can be executed in parallel as they involve creating separate files and directories.
+- Tasks T001-T005 in Phase 1 can be executed in parallel as they involve creating separate configuration and directory files.
+- Tasks T006-T020 in User Story 1 can be executed in parallel as they involve creating separate files and directories with no dependencies between them.
 
 ## Implementation Strategy
 
-The implementation will proceed in a single phase to set up the entire project structure at once. This aligns with the goal of providing a ready-to-use boilerplate for developers. The MVP is the complete, generated project structure.
+The implementation proceeds in two phases:
+1. **Phase 1 (Setup)**: Create configuration files and basic directory structure
+2. **Phase 2 (User Story 1)**: Create all bootstrap files, feature modules, and core implementation files
+
+This ensures a complete, working React application structure that can be immediately tested by running `npm install && npm run dev`. The MVP is the complete, generated project structure with all necessary bootstrap and configuration files.
