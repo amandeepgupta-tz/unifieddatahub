@@ -20,56 +20,42 @@ description: "Task list template for feature implementation"
 
 ## Path Conventions
 
-- **Single project**: `src/`, `tests/` at repository root
-- **Web app**: `backend/src/`, `frontend/src/`
-- **Mobile**: `api/src/`, `ios/src/` or `android/src/`
-- Paths shown below assume single project - adjust based on plan.md structure
+- **Feature-based structure**: `src/features/[feature-name]/`
+- **Components**: `src/features/[feature-name]/components/`
+- **Hooks**: `src/features/[feature-name]/hooks/`
+- **API**: `src/features/[feature-name]/api/`
+- **Centralized Axios**: `src/lib/axios.js`
 
 <!-- 
   ============================================================================
-  IMPORTANT: The tasks below are SAMPLE TASKS for illustration purposes only.
+  IMPORTANT: The tasks below are SAMPLE TASKS for a React/TanStack Query project.
   
   The /speckit.tasks command MUST replace these with actual tasks based on:
-  - User stories from spec.md (with their priorities P1, P2, P3...)
+  - User stories from spec.md
   - Feature requirements from plan.md
-  - Entities from data-model.md
-  - Endpoints from contracts/
   
-  Tasks MUST be organized by user story so each story can be:
-  - Implemented independently
-  - Tested independently
-  - Delivered as an MVP increment
-  
-  DO NOT keep these sample tasks in the generated tasks.md file.
+  Tasks MUST be organized by user story.
   ============================================================================
 -->
 
 ## Phase 1: Setup (Shared Infrastructure)
 
-**Purpose**: Project initialization and basic structure
+**Purpose**: Project initialization and basic structure.
 
-- [ ] T001 Create project structure per implementation plan
-- [ ] T002 Initialize [language] project with [framework] dependencies
-- [ ] T003 [P] Configure linting and formatting tools
+- [ ] T001 Create project structure per implementation plan in `plan.md`.
+- [ ] T002 Initialize React project and install dependencies (`react`, `react-dom`, `axios`, `zustand`, `@tanstack/react-query`).
+- [ ] T003 Configure Prettier for code formatting.
+- [ ] T004 Set up centralized Axios instance in `src/lib/axios.js` with request/response interceptors.
 
 ---
 
 ## Phase 2: Foundational (Blocking Prerequisites)
 
-**Purpose**: Core infrastructure that MUST be complete before ANY user story can be implemented
+**Purpose**: Core infrastructure that MUST be complete before ANY user story can be implemented.
 
-**⚠️ CRITICAL**: No user story work can begin until this phase is complete
-
-Examples of foundational tasks (adjust based on your project):
-
-- [ ] T004 Setup database schema and migrations framework
-- [ ] T005 [P] Implement authentication/authorization framework
-- [ ] T006 [P] Setup API routing and middleware structure
-- [ ] T007 Create base models/entities that all stories depend on
-- [ ] T008 Configure error handling and logging infrastructure
-- [ ] T009 Setup environment configuration management
-
-**Checkpoint**: Foundation ready - user story implementation can now begin in parallel
+- [ ] T005 Setup Zustand store for authentication in `src/store/auth.js`.
+- [ ] T006 Implement `ProtectedRoute` component.
+- [ ] T007 Setup `QueryClientProvider` at the root of the application.
 
 ---
 
@@ -79,23 +65,15 @@ Examples of foundational tasks (adjust based on your project):
 
 **Independent Test**: [How to verify this story works on its own]
 
-### Tests for User Story 1 (OPTIONAL - only if tests requested) ⚠️
-
-> **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
-
-- [ ] T010 [P] [US1] Contract test for [endpoint] in tests/contract/test_[name].py
-- [ ] T011 [P] [US1] Integration test for [user journey] in tests/integration/test_[name].py
-
 ### Implementation for User Story 1
 
-- [ ] T012 [P] [US1] Create [Entity1] model in src/models/[entity1].py
-- [ ] T013 [P] [US1] Create [Entity2] model in src/models/[entity2].py
-- [ ] T014 [US1] Implement [Service] in src/services/[service].py (depends on T012, T013)
-- [ ] T015 [US1] Implement [endpoint/feature] in src/[location]/[file].py
-- [ ] T016 [US1] Add validation and error handling
-- [ ] T017 [US1] Add logging for user story 1 operations
+- [ ] T012 [P] [US1] Create API endpoint definition in `src/features/[feature-name]/api/[endpoint].js`.
+- [ ] T013 [US1] Create custom hook `use[FeatureName]` in `src/features/[feature-name]/hooks/use[FeatureName].js` using `useQuery` or `useMutation`.
+- [ ] T014 [P] [US1] Create React component `[ComponentName]` in `src/features/[feature-name]/components/[ComponentName].jsx`.
+- [ ] T015 [US1] Style the component using CSS Modules in `src/features/[feature-name]/components/[ComponentName].module.css`.
+- [ ] T016 [US1] Integrate the component and hook into the main application flow.
 
-**Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
+**Checkpoint**: At this point, User Story 1 should be fully functional and testable independently.
 
 ---
 
