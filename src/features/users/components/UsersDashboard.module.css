@@ -1,0 +1,77 @@
+.dashboard {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0 0 0.5rem 0;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #718096;
+  margin: 0;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.usersSection {
+  position: sticky;
+  top: 80px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.postsSection {
+  min-height: 400px;
+}
+
+/* Scrollbar styles for users section */
+.usersSection::-webkit-scrollbar {
+  width: 8px;
+}
+
+.usersSection::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.usersSection::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 4px;
+}
+
+.usersSection::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .usersSection {
+    position: static;
+    max-height: none;
+    overflow-y: visible;
+    padding-right: 0;
+  }
+}

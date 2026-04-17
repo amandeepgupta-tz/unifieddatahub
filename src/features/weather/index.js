@@ -1,3 +1,3 @@
-// Weather feature module
-// This is a placeholder file for the weather feature
-export default {};
+export { default as WeatherDashboard } from './components/WeatherDashboard';
+export { useCurrentWeather } from './hooks/useCurrentWeather';
+export { useWeatherForecast } from './hooks/useWeatherForecast';

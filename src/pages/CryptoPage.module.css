@@ -1,0 +1,75 @@
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0 0 0.5rem 0;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #718096;
+  margin: 0;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.placeholderCard {
+  background: white;
+  border-radius: 12px;
+  padding: 3rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  max-width: 600px;
+}
+
+.icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.cardTitle {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0 0 1rem 0;
+}
+
+.cardDescription {
+  font-size: 1rem;
+  color: #718096;
+  margin: 0 0 2rem 0;
+  line-height: 1.6;
+}
+
+.featureList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: left;
+  background-color: #f7fafc;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.feature {
+  font-size: 0.95rem;
+  color: #4a5568;
+  font-weight: 500;
+}
