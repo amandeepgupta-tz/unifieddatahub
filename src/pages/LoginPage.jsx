@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useAuth } from '../features/auth/hooks/useAuth';
 import LoginForm from '../features/auth/components/LoginForm';
 import { validateSecureConnection } from '../lib/sanitize';
+import styles from './LoginPage.module.css';
 
 /**
  * LoginPage Component
@@ -30,25 +31,9 @@ const LoginPage = () => {
   }
 
   return (
-    <div style={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      minHeight: '100vh',
-      backgroundColor: '#f5f5f5',
-      flexDirection: 'column',
-    }}>
+    <div className={styles.container}>
       {securityWarning && (
-        <div style={{
-          backgroundColor: '#fef2f2',
-          border: '1px solid #fca5a5',
-          color: '#991b1b',
-          padding: '1rem',
-          borderRadius: '6px',
-          marginBottom: '1rem',
-          maxWidth: '400px',
-          textAlign: 'center',
-        }}>
+        <div className={styles.securityWarning}>
           ⚠️ {securityWarning}
         </div>
       )}

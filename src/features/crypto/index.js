@@ -1,3 +1,3 @@
-// Crypto feature module
-// This is a placeholder file for the crypto feature
-export default {};
+export { default as CryptoDashboard } from './components/CryptoDashboard';
+export { useCryptoMarkets } from './hooks/useCryptoMarkets';
+export { useCryptoSearch } from './hooks/useCryptoSearch';

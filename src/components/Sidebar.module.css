@@ -1,19 +1,19 @@
 .sidebar {
   width: 260px;
   height: 100vh;
-  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
-  color: white;
+  background: var(--bg-darker);
+  color: var(--text-inverse);
   display: flex;
   flex-direction: column;
   position: fixed;
   left: 0;
   top: 0;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-lg);
   z-index: 1000;
 }
 
 .logoContainer {
-  padding: 1.5rem 1rem;
+  padding: var(--spacing-lg) var(--spacing-md);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -25,10 +25,10 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.5rem;
-  border-radius: 8px;
-  transition: background-color 0.2s;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-base);
 }
 
 .logoLink:hover .logo {
@@ -42,7 +42,7 @@
 .logoText {
   font-size: 1.5rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+  background: linear-gradient(135deg, var(--primary-300) 0%, var(--accent-blue-light) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -50,7 +50,7 @@
 
 .navigation {
   flex: 1;
-  padding: 1.5rem 0;
+  padding: var(--spacing-lg) 0;
   overflow-y: auto;
 }
 
@@ -61,31 +61,30 @@
 }
 
 .menuItem {
-  margin-bottom: 0.5rem;
-  padding: 0 1rem;
+  margin-bottom: var(--spacing-sm);
+  padding: 0 var(--spacing-md);
 }
 
 .menuLink {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 0.875rem 1rem;
-  border-radius: 8px;
+  gap: var(--spacing-md);
+  padding: 0.875rem var(--spacing-md);
+  border-radius: var(--radius-md);
   text-decoration: none;
-  color: #cbd5e1;
-  transition: all 0.2s;
+  color: var(--neutral-300);
+  transition: all var(--transition-base);
   position: relative;
 }
 
 .menuLink:hover {
   background-color: rgba(255, 255, 255, 0.08);
-  color: white;
+  color: var(--text-inverse);
 }
 
 .menuLink.active {
-  background-color: rgba(96, 165, 250, 0.15);
-  color: white;
-  border-left: 3px solid #60a5fa;
+  background-color: var(--primary-700);
+  color: var(--text-inverse);
 }
 
 .menuLink.active::before {
@@ -95,8 +94,8 @@
   top: 0;
   bottom: 0;
   width: 3px;
-  background: linear-gradient(180deg, #60a5fa 0%, #3b82f6 100%);
-  border-radius: 0 3px 3px 0;
+  background: var(--accent-blue);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
 
 .menuIcon {
@@ -111,40 +110,40 @@
 }
 
 .menuLabel {
-  font-size: 0.95rem;
+  font-size: var(--font-size-sm);
   font-weight: 600;
 }
 
 .menuDescription {
-  font-size: 0.75rem;
-  color: #94a3b8;
+  font-size: var(--font-size-xs);
+  color: var(--neutral-400);
 }
 
 .menuLink.active .menuDescription {
-  color: #bfdbfe;
+  color: var(--primary-100);
 }
 
 .footer {
-  padding: 1rem;
+  padding: var(--spacing-md);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footerText {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
-  padding: 0.5rem;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm);
 }
 
 .footerLabel {
-  font-size: 0.875rem;
+  font-size: var(--font-size-sm);
   font-weight: 600;
-  color: #cbd5e1;
+  color: var(--neutral-300);
 }
 
 .footerVersion {
-  font-size: 0.75rem;
-  color: #64748b;
+  font-size: var(--font-size-xs);
+  color: var(--neutral-500);
 }
 
 /* Scrollbar styles */

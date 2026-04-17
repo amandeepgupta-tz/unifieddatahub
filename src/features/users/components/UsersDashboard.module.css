@@ -5,28 +5,28 @@
 }
 
 .header {
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 2px solid #e2e8f0;
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 2px solid var(--border-light);
 }
 
 .title {
-  font-size: 2rem;
+  font-size: var(--font-size-3xl);
   font-weight: 700;
-  color: #1a202c;
-  margin: 0 0 0.5rem 0;
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-sm) 0;
 }
 
 .subtitle {
-  font-size: 1rem;
-  color: #718096;
+  font-size: var(--font-size-base);
+  color: var(--text-tertiary);
   margin: 0;
 }
 
 .content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: var(--spacing-xl);
   align-items: start;
 }
 

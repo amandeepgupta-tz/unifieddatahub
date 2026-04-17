@@ -1,10 +1,20 @@
 import axios from 'axios';
 
 const WEATHER_BASE_URL = 'https://api.open-meteo.com/v1';
+const GEOCODING_BASE_URL = 'https://geocoding-api.open-meteo.com/v1';
 
 // Create a separate axios instance for Weather API (no auth required)
 const weatherAxios = axios.create({
   baseURL: WEATHER_BASE_URL,
+  timeout: 10000,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
+// Create a separate axios instance for Geocoding API
+const geocodingAxios = axios.create({
+  baseURL: GEOCODING_BASE_URL,
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
@@ -54,4 +64,27 @@ export const getWeatherForecast = async ({ latitude, longitude }) => {
     }
   });
   return response.data;
+};
+
+/**
+ * Search for locations by name using geocoding API
+ * @param {string} name - Location name to search for
+ * @param {number} count - Maximum number of results (default: 5)
+ * @returns {Promise<Array>} Array of location results
+ */
+export const searchLocationByName = async (name, count = 5) => {
+  if (!name || name.trim().length < 2) {
+    return [];
+  }
+  
+  const response = await geocodingAxios.get('/search', {
+    params: {
+      name: name.trim(),
+      count,
+      language: 'en',
+      format: 'json'
+    }
+  });
+  
+  return response.data.results || [];
 };

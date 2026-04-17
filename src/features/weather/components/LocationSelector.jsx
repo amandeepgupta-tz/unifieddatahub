@@ -1,9 +1,10 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
+import { useLocationSearch } from '../hooks/useLocationSearch';
 import styles from './LocationSelector.module.css';
 
 /**
  * LocationSelector Component
- * Allows users to select or input location coordinates
+ * Allows users to select preset locations, search by name, or input coordinates
  */
 
 const PRESET_LOCATIONS = [
@@ -18,12 +19,53 @@ const PRESET_LOCATIONS = [
 const LocationSelector = ({ onLocationChange, currentLocation }) => {
   const [customLat, setCustomLat] = useState('');
   const [customLon, setCustomLon] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [shouldSearch, setShouldSearch] = useState(false);
+  const [showResults, setShowResults] = useState(false);
+
+  // Debounce search query
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (searchQuery.trim().length >= 2) {
+        setShouldSearch(true);
+      } else {
+        setShouldSearch(false);
+      }
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, [searchQuery]);
+
+  const { data: searchResults, isLoading: isSearching, error: searchError } = useLocationSearch(
+    searchQuery,
+    shouldSearch
+  );
 
   const handlePresetSelect = useCallback((location) => {
     onLocationChange(location);
     setCustomLat('');
     setCustomLon('');
+    setSearchQuery('');
+    setShowResults(false);
   }, [onLocationChange]);
+
+  const handleSearchResultSelect = useCallback((result) => {
+    const location = {
+      name: `${result.name}${result.admin1 ? ', ' + result.admin1 : ''}${result.country ? ', ' + result.country : ''}`,
+      latitude: result.latitude,
+      longitude: result.longitude
+    };
+    onLocationChange(location);
+    setSearchQuery('');
+    setShowResults(false);
+    setCustomLat('');
+    setCustomLon('');
+  }, [onLocationChange]);
+
+  const handleSearchChange = useCallback((e) => {
+    setSearchQuery(e.target.value);
+    setShowResults(true);
+  }, []);
 
   const handleCustomSubmit = useCallback((e) => {
     e.preventDefault();
@@ -36,6 +78,8 @@ const LocationSelector = ({ onLocationChange, currentLocation }) => {
         latitude: lat,
         longitude: lon
       });
+      setSearchQuery('');
+      setShowResults(false);
     }
   }, [customLat, customLon, onLocationChange]);
 
@@ -43,6 +87,64 @@ const LocationSelector = ({ onLocationChange, currentLocation }) => {
     <div className={styles.container}>
       <h3 className={styles.title}>Select Location</h3>
       
+      {/* Search by Name */}
+      <div className={styles.searchSection}>
+        <label className={styles.label}>Search by Location Name</label>
+        <div className={styles.searchInputWrapper}>
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={handleSearchChange}
+            onFocus={() => setShowResults(true)}
+            placeholder="e.g., Mumbai, Berlin, Toronto..."
+            className={styles.searchInput}
+          />
+          {isSearching && <span className={styles.searchLoader}>🔍</span>}
+        </div>
+        
+        {/* Search Results */}
+        {showResults && searchQuery.trim().length >= 2 && (
+          <div className={styles.searchResults}>
+            {searchError && (
+              <div className={styles.searchError}>
+                Failed to search locations. Please try again.
+              </div>
+            )}
+            {!isSearching && searchResults && searchResults.length > 0 && (
+              <div className={styles.resultsList}>
+                {searchResults.map((result, index) => (
+                  <button
+                    key={`${result.id}-${index}`}
+                    onClick={() => handleSearchResultSelect(result)}
+                    className={styles.searchResultItem}
+                  >
+                    <div className={styles.resultName}>
+                      📍 {result.name}
+                      {result.admin1 && `, ${result.admin1}`}
+                    </div>
+                    <div className={styles.resultCountry}>
+                      {result.country}
+                      <span className={styles.resultCoords}>
+                        {result.latitude.toFixed(2)}°, {result.longitude.toFixed(2)}°
+                      </span>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            )}
+            {!isSearching && searchResults && searchResults.length === 0 && (
+              <div className={styles.noResults}>
+                No locations found. Try a different search term.
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+
+      <div className={styles.divider}>
+        <span className={styles.dividerText}>or choose preset location</span>
+      </div>
+
       <div className={styles.presetLocations}>
         {PRESET_LOCATIONS.map((location) => (
           <button

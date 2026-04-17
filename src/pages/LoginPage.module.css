@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--primary-50) 0%, var(--neutral-100) 100%);
+  flex-direction: column;
+  padding: var(--spacing-xl);
+}
+
+.securityWarning {
+  background-color: #fff5f5;
+  border: 1px solid var(--error-light);
+  color: var(--error);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-md);
+  max-width: 400px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}

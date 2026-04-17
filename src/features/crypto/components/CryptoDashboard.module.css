@@ -1,6 +1,6 @@
 .dashboard {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 0 auto;
 }
 
@@ -24,11 +24,27 @@
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 320px;
   gap: var(--spacing-xl);
+  align-items: start;
 }
 
-.section {
+.mainSection {
   width: 100%;
+}
+
+.sidebar {
+  position: sticky;
+  top: var(--spacing-xl);
+}
+
+@media (max-width: 1200px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+  
+  .sidebar {
+    position: static;
+  }
 }
