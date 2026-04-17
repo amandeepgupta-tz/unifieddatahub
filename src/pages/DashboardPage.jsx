@@ -1,5 +1,6 @@
 import { useAuth } from '../features/auth/hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
+import { SpaceXDashboard } from '../features/spacex';
 import styles from './DashboardPage.module.css';
 
 /**
@@ -18,38 +19,26 @@ const DashboardPage = () => {
   return (
     <div className={styles.dashboard}>
       <header className={styles.header}>
-        <h1>Dashboard</h1>
+        <div className={styles.headerContent}>
+          <h1>Dashboard</h1>
+          <div className={styles.userInfo}>
+            {user?.image && (
+              <img
+                src={user.image}
+                alt={user.username}
+                className={styles.avatarSmall}
+              />
+            )}
+            <span className={styles.userName}>{user?.firstName} {user?.lastName}</span>
+          </div>
+        </div>
         <button className={styles.logoutButton} onClick={handleLogout}>
           Logout
         </button>
       </header>
 
       <main className={styles.main}>
-        <div className={styles.welcomeCard}>
-          {user?.image && (
-            <img
-              src={user.image}
-              alt={user.username}
-              className={styles.avatar}
-            />
-          )}
-          <h2>Welcome, {user?.firstName} {user?.lastName}!</h2>
-          <p className={styles.email}>{user?.email}</p>
-          <p className={styles.username}>@{user?.username}</p>
-        </div>
-
-        <div className={styles.infoGrid}>
-          <div className={styles.infoCard}>
-            <h3>User ID</h3>
-            <p>{user?.id}</p>
-          </div>
-          {user?.gender && (
-            <div className={styles.infoCard}>
-              <h3>Gender</h3>
-              <p>{user.gender}</p>
-            </div>
-          )}
-        </div>
+        <SpaceXDashboard />
       </main>
     </div>
   );
