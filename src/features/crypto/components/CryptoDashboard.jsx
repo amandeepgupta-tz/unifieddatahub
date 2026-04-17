@@ -1,4 +1,5 @@
 import CryptoList from './CryptoList';
+import CryptoSearch from './CryptoSearch';
 import Watchlist from './Watchlist';
 import styles from './CryptoDashboard.module.css';
 
@@ -16,6 +17,8 @@ const CryptoDashboard = () => {
           Live cryptocurrency prices, market cap, and 24h volume
         </p>
       </div>
+
+      <CryptoSearch />
 
       <div className={styles.content}>
         <div className={styles.mainSection}>

@@ -1,4 +1,5 @@
 import { SpaceXDashboard } from '../features/spacex';
+import ErrorBoundary from '../components/ErrorBoundary';
 import styles from './DashboardPage.module.css';
 
 /**
@@ -7,9 +8,11 @@ import styles from './DashboardPage.module.css';
  */
 const DashboardPage = () => {
   return (
-    <div className={styles.dashboard}>
-      <SpaceXDashboard />
-    </div>
+    <ErrorBoundary title="SpaceX Feature Error" message="Unable to load SpaceX data.">
+      <div className={styles.dashboard}>
+        <SpaceXDashboard />
+      </div>
+    </ErrorBoundary>
   );
 };
 

@@ -1,4 +1,5 @@
 import { WeatherDashboard } from '../features/weather';
+import ErrorBoundary from '../components/ErrorBoundary';
 import styles from './WeatherPage.module.css';
 
 /**
@@ -7,9 +8,11 @@ import styles from './WeatherPage.module.css';
  */
 const WeatherPage = () => {
   return (
-    <div className={styles.container}>
-      <WeatherDashboard />
-    </div>
+    <ErrorBoundary title="Weather Feature Error" message="Unable to load weather data.">
+      <div className={styles.container}>
+        <WeatherDashboard />
+      </div>
+    </ErrorBoundary>
   );
 };
 

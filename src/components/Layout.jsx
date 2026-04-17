@@ -1,6 +1,7 @@
 import { Outlet, useNavigate } from 'react-router-dom';
 import { useAuth } from '../features/auth/hooks/useAuth';
 import Sidebar from './Sidebar';
+import ThemeToggle from './ThemeToggle';
 import styles from './Layout.module.css';
 
 /**
@@ -27,6 +28,8 @@ const Layout = () => {
           </div>
           
           <div className={styles.headerActions}>
+            <ThemeToggle />
+            
             <div className={styles.userInfo}>
               {user?.image && (
                 <img
