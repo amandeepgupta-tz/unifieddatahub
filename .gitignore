@@ -1,3 +1,27 @@
 .github/
 
+# Dependencies
 node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Logs
+*.log
+
+# Environment variables
+.env*
+!.env.example
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.swp
+
+# IDE
+.vscode/
+.idea/

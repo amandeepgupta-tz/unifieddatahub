@@ -1,0 +1,270 @@
+.container {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin: 0;
+}
+
+.stats {
+  font-size: 0.875rem;
+  color: #718096;
+}
+
+.loading,
+.error,
+.noData {
+  padding: 2rem;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #f7fafc;
+}
+
+.error {
+  background-color: #fff5f5;
+  color: #c53030;
+}
+
+.launchesTable {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: 80px 2fr 150px 120px 100px;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f7fafc;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.headerCell {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #4a5568;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tableBody {
+  display: flex;
+  flex-direction: column;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 80px 2fr 150px 120px 100px;
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  transition: background-color 0.2s;
+}
+
+.tableRow:hover {
+  background-color: #f7fafc;
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #2d3748;
+}
+
+.flightNumber {
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.nameCell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.patchImage {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.nameInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.launchName {
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.launchDetails {
+  font-size: 0.75rem;
+  color: #718096;
+  line-height: 1.4;
+}
+
+.dateCell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.date {
+  font-weight: 500;
+  color: #2d3748;
+}
+
+.time {
+  font-size: 0.75rem;
+  color: #718096;
+}
+
+.statusUpcoming {
+  padding: 0.25rem 0.75rem;
+  background-color: #bee3f8;
+  color: #2c5282;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.statusSuccess {
+  padding: 0.25rem 0.75rem;
+  background-color: #c6f6d5;
+  color: #22543d;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.statusFailed {
+  padding: 0.25rem 0.75rem;
+  background-color: #fed7d7;
+  color: #742a2a;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.statusUnknown {
+  padding: 0.25rem 0.75rem;
+  background-color: #e2e8f0;
+  color: #4a5568;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.linksCell {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.linkIcon {
+  font-size: 1.25rem;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.linkIcon:hover {
+  transform: scale(1.2);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.paginationButton {
+  padding: 0.5rem 1rem;
+  background-color: #4299e1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.paginationButton:hover:not(:disabled) {
+  background-color: #3182ce;
+}
+
+.paginationButton:disabled {
+  background-color: #cbd5e0;
+  cursor: not-allowed;
+}
+
+.pageInfo {
+  font-size: 0.875rem;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.loadingOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #4a5568;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .tableHeader,
+  .tableRow {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .headerCell {
+    display: none;
+  }
+
+  .cell {
+    padding: 0.25rem 0;
+  }
+
+  .tableRow {
+    padding: 1rem;
+    background-color: #f7fafc;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+  }
+}

@@ -1,0 +1,149 @@
+.container {
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1a202c;
+}
+
+.loading,
+.error,
+.noData {
+  padding: 2rem;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #f7fafc;
+}
+
+.error {
+  background-color: #fff5f5;
+  color: #c53030;
+}
+
+.launchesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.launchCard {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s;
+}
+
+.launchCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.patchImage {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.cardHeaderInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.launchName {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+  color: #2d3748;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.flightNumber {
+  font-size: 0.75rem;
+  color: #718096;
+}
+
+.cardBody {
+  margin-bottom: 1rem;
+}
+
+.dateInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
+  padding: 0.75rem;
+  background-color: #ebf8ff;
+  border-radius: 6px;
+}
+
+.dateLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #2c5282;
+}
+
+.dateValue {
+  font-size: 0.875rem;
+  color: #2d3748;
+  font-weight: 500;
+}
+
+.timeValue {
+  font-size: 0.875rem;
+  color: #4a5568;
+}
+
+.details {
+  font-size: 0.875rem;
+  color: #4a5568;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.cardFooter {
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.watchButton {
+  display: inline-block;
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #4299e1;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.watchButton:hover {
+  background-color: #3182ce;
+}
+
+.moreInfo {
+  text-align: center;
+  padding: 1rem;
+  background-color: #f7fafc;
+  border-radius: 6px;
+  color: #718096;
+  font-size: 0.875rem;
+}

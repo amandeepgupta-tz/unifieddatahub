@@ -1,0 +1,163 @@
+.container {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: #2d3748;
+}
+
+.location {
+  font-size: 1rem;
+  color: #718096;
+  margin: 0;
+}
+
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.placeholderIcon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.placeholderTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0 0 0.75rem 0;
+}
+
+.placeholderText {
+  font-size: 1rem;
+  color: #718096;
+  margin: 0;
+}
+
+.loading,
+.error,
+.noData {
+  padding: 2rem;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #f7fafc;
+}
+
+.error {
+  background-color: #fff5f5;
+  color: #c53030;
+}
+
+.mainWeather {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.weatherIcon {
+  font-size: 6rem;
+  flex-shrink: 0;
+}
+
+.weatherDetails {
+  flex: 1;
+}
+
+.temperature {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #2d3748;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.condition {
+  font-size: 1.5rem;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.additionalInfo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.infoCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f7fafc;
+  border-radius: 8px;
+}
+
+.infoIcon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.infoContent {
+  flex: 1;
+}
+
+.infoLabel {
+  font-size: 0.875rem;
+  color: #718096;
+  margin-bottom: 0.25rem;
+}
+
+.infoValue {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.footer {
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.updateTime {
+  font-size: 0.875rem;
+  color: #718096;
+}
+
+@media (max-width: 768px) {
+  .mainWeather {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .temperature {
+    font-size: 3rem;
+  }
+
+  .condition {
+    font-size: 1.25rem;
+  }
+
+  .additionalInfo {
+    grid-template-columns: 1fr;
+  }
+}

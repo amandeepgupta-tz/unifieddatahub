@@ -22,6 +22,12 @@ As a developer, I want to have a clearly defined and generated project structure
 3. **Given** the `lib` directory, **When** the project is initialized, **Then** it contains an `axios.js` file with a configured Axios instance.
 4. **Given** the `store` directory, **When** the project is initialized, **Then** it contains an `auth.js` file with a Zustand store.
 5. **Given** the `components` directory, **When** the project is initialized, **Then** it contains `ProtectedRoute.jsx` and `Router.jsx` files.
+6. **Given** the project root, **When** the project is initialized, **Then** it contains `index.html` as the HTML entry point.
+7. **Given** the `src` directory, **When** the project is initialized, **Then** it contains `main.jsx` as the React application entry point.
+8. **Given** the `src` directory, **When** the project is initialized, **Then** it contains `App.jsx` as the root React component.
+9. **Given** the project root, **When** the project is initialized, **Then** it contains `package.json` with all required dependencies.
+10. **Given** the project root, **When** the project is initialized, **Then** it contains `vite.config.js` with proper build configuration.
+11. **Given** the initialized project, **When** a developer runs `npm install` and `npm run dev`, **Then** the application successfully starts on a local development server.
 
 ## Requirements *(mandatory)*
 
@@ -34,6 +40,11 @@ As a developer, I want to have a clearly defined and generated project structure
 - **FR-005**: The `lib` directory MUST contain an `axios.js` file exporting a configured Axios instance.
 - **FR-006**: The `store` directory MUST contain an `auth.js` file exporting a Zustand store.
 - **FR-007**: The `components` directory MUST contain `ProtectedRoute.jsx` and `Router.jsx`.
+- **FR-008**: The project root MUST contain an `index.html` file as the HTML entry point with a root div element.
+- **FR-009**: The `src` directory MUST contain a `main.jsx` file that bootstraps the React application.
+- **FR-010**: The `src` directory MUST contain an `App.jsx` file that serves as the root React component integrating the Router.
+- **FR-011**: The project root MUST contain a `package.json` file with all required dependencies (React, React Router, Axios, Zustand, TanStack Query) and development scripts.
+- **FR-012**: The project root MUST contain a `vite.config.js` file with proper React plugin configuration.
 
 ## Success Criteria *(mandatory)*
 
@@ -41,6 +52,8 @@ As a developer, I want to have a clearly defined and generated project structure
 
 - **SC-001**: A developer can clone the repository and immediately start working on a feature within the established structure.
 - **SC-002**: The generated structure fully complies with the rules defined in the project constitution.
+- **SC-003**: A developer can run `npm install` followed by `npm run dev` and the application successfully starts without errors.
+- **SC-004**: The application renders correctly in a browser and displays the routing structure.
 
 ## Assumptions
 
